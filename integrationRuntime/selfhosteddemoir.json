@@ -1,0 +1,6 @@
+{
+	"name": "selfhosteddemoir",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

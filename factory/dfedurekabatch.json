@@ -1,0 +1,9 @@
+{
+	"name": "dfedurekabatch",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "65585457-c663-4e14-b1c0-70768effa395",
+		"tenantId": "c91ef2a2-72ac-4886-b540-2a950e932a6a"
+	}
+}

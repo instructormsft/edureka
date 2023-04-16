@@ -1,0 +1,25 @@
+{
+	"name": "strg",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pln_blobToADLS",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/a802ab6d-59a1-4b7d-8af1-995c4c158711/resourceGroups/rg_edurekabatch9/providers/Microsoft.Storage/storageAccounts/blobstorageaccountedu",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}
