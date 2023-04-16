@@ -1,0 +1,119 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "dfedurekabatch"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"ls_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls'"
+		},
+		"ls_adls_parms_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_parms'"
+		},
+		"ls_adlssql_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adlssql'"
+		},
+		"ls_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob'"
+		},
+		"ls_sqlsrvr_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sqlsrvr'"
+		},
+		"pln_sqlsrvr_parms_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'pln_sqlsrvr_parms'"
+		},
+		"ls_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsstorageaccountedu1.dfs.core.windows.net/"
+		},
+		"ls_adls_parms_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsstorageaccountedu1.dfs.core.windows.net/"
+		},
+		"ls_adlssql_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsstorageaccountedu1.dfs.core.windows.net/"
+		},
+		"strg_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/a802ab6d-59a1-4b7d-8af1-995c4c158711/resourceGroups/rg_edurekabatch9/providers/Microsoft.Storage/storageAccounts/blobstorageaccountedu"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "dfedurekabatch_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"ls_adls_accountKey": {
+						"value": "[parameters('ls_adls_accountKey')]"
+					},
+					"ls_adls_parms_accountKey": {
+						"value": "[parameters('ls_adls_parms_accountKey')]"
+					},
+					"ls_adlssql_accountKey": {
+						"value": "[parameters('ls_adlssql_accountKey')]"
+					},
+					"ls_blob_connectionString": {
+						"value": "[parameters('ls_blob_connectionString')]"
+					},
+					"ls_sqlsrvr_connectionString": {
+						"value": "[parameters('ls_sqlsrvr_connectionString')]"
+					},
+					"pln_sqlsrvr_parms_connectionString": {
+						"value": "[parameters('pln_sqlsrvr_parms_connectionString')]"
+					},
+					"ls_adls_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_properties_typeProperties_url')]"
+					},
+					"ls_adls_parms_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_parms_properties_typeProperties_url')]"
+					},
+					"ls_adlssql_properties_typeProperties_url": {
+						"value": "[parameters('ls_adlssql_properties_typeProperties_url')]"
+					},
+					"strg_properties_typeProperties_scope": {
+						"value": "[parameters('strg_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

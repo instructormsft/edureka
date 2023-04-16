@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dfedurekabatch"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"ls_adls_accountKey": {
+			"value": ""
+		},
+		"ls_adls_parms_accountKey": {
+			"value": ""
+		},
+		"ls_adlssql_accountKey": {
+			"value": ""
+		},
+		"ls_blob_connectionString": {
+			"value": ""
+		},
+		"ls_sqlsrvr_connectionString": {
+			"value": ""
+		},
+		"pln_sqlsrvr_parms_connectionString": {
+			"value": ""
+		},
+		"ls_adls_properties_typeProperties_url": {
+			"value": "https://adlsstorageaccountedu1.dfs.core.windows.net/"
+		},
+		"ls_adls_parms_properties_typeProperties_url": {
+			"value": "https://adlsstorageaccountedu1.dfs.core.windows.net/"
+		},
+		"ls_adlssql_properties_typeProperties_url": {
+			"value": "https://adlsstorageaccountedu1.dfs.core.windows.net/"
+		},
+		"strg_properties_typeProperties_scope": {
+			"value": "/subscriptions/a802ab6d-59a1-4b7d-8af1-995c4c158711/resourceGroups/rg_edurekabatch9/providers/Microsoft.Storage/storageAccounts/blobstorageaccountedu"
+		}
+	}
+}
